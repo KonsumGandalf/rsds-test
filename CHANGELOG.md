@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.0.0 (2023-02-01)
+
+
+### Bug Fixes
+
+* test flow ([0af965a](https://github.com/KonsumGandalf/RsdsFix/commit/0af965a04ed5ed0662c07e6d39fd9001c7a4974f))
+* test flow ([5ad1207](https://github.com/KonsumGandalf/RsdsFix/commit/5ad1207338e6bff4df14e519536e9691a6a77299))
+* test flow ([9383aee](https://github.com/KonsumGandalf/RsdsFix/commit/9383aee6d873fb691e655258a80b7d8c81b99a8d))
+* test flow ([f1003ae](https://github.com/KonsumGandalf/RsdsFix/commit/f1003ae09b44665933745fe6fa05fdcdcec12b8a))
+* test flow ([c71a135](https://github.com/KonsumGandalf/RsdsFix/commit/c71a135d8ff3f53ad942f56ae883b86ac34639a6))
+* test flow ([eaab1b3](https://github.com/KonsumGandalf/RsdsFix/commit/eaab1b37145699527adbeabf99e7c1bde6f3da21))
+
 ## [0.2.0](https://github.com/KonsumGandalf/Rsds/compare/release-please-action-v0.1.1...release-please-action-v0.2.0) (2023-02-01)
 
 
