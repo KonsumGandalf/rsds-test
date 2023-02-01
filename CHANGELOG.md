@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.1.0](https://github.com/KonsumGandalf/RsdsFix/compare/rsds-package-v1.0.1...rsds-package-v1.1.0) (2023-02-01)
+
+
+### Features
+
+* med test ([72ec56e](https://github.com/KonsumGandalf/RsdsFix/commit/72ec56e6a1853e0440243a2ecc4e128c0cd39810))
+
+
+### Bug Fixes
+
+* sub change ([7396f3e](https://github.com/KonsumGandalf/RsdsFix/commit/7396f3e9b222179b2c32bcf7dda827de6423b014))
+* sub change ([171135b](https://github.com/KonsumGandalf/RsdsFix/commit/171135bcf549953f3df4724545a298c57882f0a1))
+* test flow ([0af965a](https://github.com/KonsumGandalf/RsdsFix/commit/0af965a04ed5ed0662c07e6d39fd9001c7a4974f))
+* test flow ([5ad1207](https://github.com/KonsumGandalf/RsdsFix/commit/5ad1207338e6bff4df14e519536e9691a6a77299))
+* test flow ([9383aee](https://github.com/KonsumGandalf/RsdsFix/commit/9383aee6d873fb691e655258a80b7d8c81b99a8d))
+* test flow ([f1003ae](https://github.com/KonsumGandalf/RsdsFix/commit/f1003ae09b44665933745fe6fa05fdcdcec12b8a))
+* test flow ([c71a135](https://github.com/KonsumGandalf/RsdsFix/commit/c71a135d8ff3f53ad942f56ae883b86ac34639a6))
+* test flow ([eaab1b3](https://github.com/KonsumGandalf/RsdsFix/commit/eaab1b37145699527adbeabf99e7c1bde6f3da21))
+
+
+### Miscellaneous
+
+* **develop:** release rsds-package 1.0.0 ([25278d3](https://github.com/KonsumGandalf/RsdsFix/commit/25278d30bdf3efd8ab893f163160c8a283bde270))
+* **develop:** release rsds-package 1.0.1 ([fa580c4](https://github.com/KonsumGandalf/RsdsFix/commit/fa580c483f1af1caaebe9f3d5f40fcc73bf061f2))
+
 ## [1.0.1](https://github.com/KonsumGandalf/RsdsFix/compare/rsds-package-v1.0.0...rsds-package-v1.0.1) (2023-02-01)
 
 
