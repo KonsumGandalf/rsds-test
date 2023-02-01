@@ -1,0 +1,43 @@
+name: Changelog and Release
+run-name: Create Changelog and Release by @${{ github.actor }}
+on:
+    push:
+        branches: [develop]
+
+    workflow_dispatch:
+
+jobs:
+    setup:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [16.x]
+
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
+
+            -   name: Use Node.js ${{ matrix.node-version }}
+                uses: actions/setup-node@v3
+                with:
+                    node-version: ${{ matrix.node-version }}
+            -   run: git fetch origin $NX_BRANCH
+
+            -   uses: actions/cache@v3
+                with:
+                    path: ~/.npm
+                    key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                    restore-keys: |
+                        ${{ runner.os }}-node-
+            -   name: Install dependencies
+                run: npm ci
+
+            -   name: release-please-action
+                uses: google-github-actions/release-please-action@v3.1.2
+                with:
+                    release-type: node
+                    package-name: release-please-action
+                    token: ${{ secrets.CHANGELOG_RELEASE }}
+                    monorepo-tags: true
+                    command: release-pr
