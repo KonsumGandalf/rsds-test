@@ -7,7 +7,7 @@ on:
     workflow_dispatch:
 
 jobs:
-    setup:
+    changelog-pr-release:
         runs-on: ubuntu-latest
         strategy:
             matrix:
