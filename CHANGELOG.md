@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/KonsumGandalf/RsdsFix/compare/rsds-package-v1.0.2...rsds-package-v1.1.0) (2023-02-02)
+
+
+### Features
+
+* med test ([7f7e445](https://github.com/KonsumGandalf/RsdsFix/commit/7f7e44584eb6d92bc7011a7536704ba78b3291ed))
+
 ## [1.1.0](https://github.com/KonsumGandalf/RsdsFix/compare/rsds-package-v1.0.1...rsds-package-v1.1.0) (2023-02-01)
 
 
