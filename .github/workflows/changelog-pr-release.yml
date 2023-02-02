@@ -6,8 +6,9 @@ on:
 
     workflow_dispatch:
 
+permissions: write-all
 jobs:
-    setup:
+    changelog-pr-release:
         runs-on: ubuntu-latest
         strategy:
             matrix:
