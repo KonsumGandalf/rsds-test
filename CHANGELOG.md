@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/KonsumGandalf/RsdsFix/compare/rsds-package-v1.1.0...rsds-package-v1.2.0) (2023-02-02)
+
+
+### Features
+
+* med test ([fcedc9d](https://github.com/KonsumGandalf/RsdsFix/commit/fcedc9d7fef870f94575b96d1129945a8ef692e3))
+
+
+### Bug Fixes
+
+* adjust naming of files ([514fa4f](https://github.com/KonsumGandalf/RsdsFix/commit/514fa4f58583f1d13296983aeed23f51cd87e044))
+
 ## [1.1.0](https://github.com/KonsumGandalf/RsdsFix/compare/rsds-package-v1.0.2...rsds-package-v1.1.0) (2023-02-02)
 
 
