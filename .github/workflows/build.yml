@@ -2,12 +2,12 @@ name: Build Project
 
 on:
     pull_request:
-        branches: [main, develop]
+        branches: [develop]
 
     workflow_dispatch:
 
 jobs:
-    test_pull_request:
+    build:
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -37,3 +37,5 @@ jobs:
               uses: mansagroup/nrwl-nx-action@v3
               with:
                   targets: build
+                  all: true
+

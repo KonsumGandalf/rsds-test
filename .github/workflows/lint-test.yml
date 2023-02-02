@@ -2,12 +2,12 @@ name: Lint & Test PR
 
 on:
     pull_request:
-        branches: [main, develop]
+        branches: [develop]
 
     workflow_dispatch:
 
 jobs:
-    test:
+    lint-test:
         runs-on: ubuntu-latest
         strategy:
             matrix:
@@ -38,3 +38,4 @@ jobs:
               uses: mansagroup/nrwl-nx-action@v3
               with:
                   targets: lint,test
+                  affected: 'true'

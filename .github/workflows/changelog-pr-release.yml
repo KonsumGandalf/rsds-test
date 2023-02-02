@@ -6,7 +6,6 @@ on:
 
     workflow_dispatch:
 
-permissions: write-all
 jobs:
     changelog-pr-release:
         runs-on: ubuntu-latest
