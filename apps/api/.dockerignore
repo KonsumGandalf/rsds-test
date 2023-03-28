@@ -1,0 +1,10 @@
+github
+.docker.env
+.vscode
+node_modules
+dist
+
+CHANGELOG.md
+README.md
+
+Dockerfile

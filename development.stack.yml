@@ -1,0 +1,72 @@
+version: '3.8'
+
+name: rsds-development
+
+services:
+    postgres:
+        image: postgres:15-alpine
+        volumes:
+            - Z:/programming_projects/docker/docker_volumes/rsds/postgres:/var/lib/postgresql/data
+        restart: unless-stopped
+        ports:
+            - "5432:5432"
+        networks:
+            - backend_network
+            - database_network
+        env_file:
+            - .docker/.postgres.env
+
+    cloudBeaver:
+        depends_on:
+            - postgres
+        image: dbeaver/cloudbeaver:22.3.2
+        volumes:
+            - Z:/programming_projects/docker/docker_volumes/rsds/cloudbeaver:/cloudbeaver
+        restart: unless-stopped
+        ports:
+            - "3030:8978"
+        networks:
+            - database_network
+
+    api:
+        depends_on:
+            - postgres
+        build:
+            context: .
+            target: development
+            dockerfile: ./apps/api/Dockerfile
+        ports:
+            - "3333:3333"
+            - "9229:9229"
+        networks:
+            - backend_network
+            - database_network
+        restart: unless-stopped
+        env_file:
+            - .docker/.backend.env
+            - .docker/.postgres.env
+        volumes:
+            - .:/usr/src/app
+        command: npx nx run api:serve:development
+
+    frontend:
+        depends_on:
+            - api
+        build:
+            context: .
+            target: development
+            dockerfile: ./apps/frontend/Dockerfile
+        restart: unless-stopped
+        ports:
+            - "4200:4200"
+        volumes:
+            - .:/usr/src/app
+        env_file:
+            - .docker/.frontend.env
+        networks:
+            - frontend_network
+
+networks:
+    database_network:
+    backend_network:
+    frontend_network:

@@ -1,20 +1,58 @@
 version: '3.8'
 
+name: rsds-production
+
 services:
-    api:
-        image: rsds/api
-        container_name: rsds_api
-        networks:
-            - api_net
+    postgres:
+        image: postgres:alpine
+        volumes:
+            - Z:/programming_projects/docker/docker_volumes/rsds/postgres:/var/lib/postgresql/data
+        restart: unless-stopped
         ports:
-            - 3333:3333
+            - "5432:5432"
+        networks:
+            - backend_network
+            - database_network
+        env_file:
+            - .docker/.postgres.env
+
+    api:
+        depends_on:
+            - postgres
+        build:
+            context: .
+            target: production
+            dockerfile: ./apps/api/Dockerfile
+        restart: unless-stopped
+        ports:
+            - "3333:3333"
+        volumes:
+            - .:/usr/src/app
+        env_file:
+            - .docker/.backend.env
+        networks:
+            - backend_network
+            - database_network
 
     frontend:
-        image: rsds/frontend
-        container_name: rsds_frontend
+        depends_on:
+            - api
+        build:
+            context: .
+            dockerfile: ./apps/frontend/Dockerfile
+        restart: unless-stopped
         ports:
-            - 4201:80
+            - "4200:80"
+        volumes:
+            - .:/usr/src/app
+        env_file:
+            - .docker/.frontend.env
+        environment:
+            - NG_APP_ENV=production
+        networks:
+            - frontend_network
 
 networks:
-    api_net:
-        driver: bridge
+    database_network:
+    backend_network:
+    frontend_network:

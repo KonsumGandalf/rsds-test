@@ -5,7 +5,7 @@
     "projectType": "application",
     "targets": {
         "build": {
-            "executor": "@nrwl/webpack:webpack",
+            "executor": "@nrwl/node:webpack",
             "outputs": ["{options.outputPath}"],
             "options": {
                 "target": "node",
@@ -14,7 +14,10 @@
                 "main": "apps/api/src/main.ts",
                 "tsConfig": "apps/api/tsconfig.app.json",
                 "assets": ["apps/api/src/assets"],
-                "webpackConfig": "apps/api/webpack.config.js"
+                "poll": 500,
+                "customWebpackConfig": {
+                    "path": "apps/api/webpack.config.js"
+                }
             },
             "configurations": {
                 "production": {

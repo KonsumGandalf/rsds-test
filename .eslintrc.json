@@ -1,11 +1,18 @@
 {
-    "root": true,
-    "extends": ["prettier"],
-    "ignorePatterns": ["**/*"],
-    "plugins": ["@nrwl/nx", "prettier"],
+    "extends": [
+        "prettier"
+    ],
+    "ignorePatterns": [
+        "**/*"
+    ],
     "overrides": [
         {
-            "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+            "files": [
+                "*.ts",
+                "*.tsx",
+                "*.js",
+                "*.jsx"
+            ],
             "rules": {
                 "@nrwl/nx/enforce-module-boundaries": [
                     "error",
@@ -15,7 +22,9 @@
                         "depConstraints": [
                             {
                                 "sourceTag": "*",
-                                "onlyDependOnLibsWithTags": ["*"]
+                                "onlyDependOnLibsWithTags": [
+                                    "*"
+                                ]
                             }
                         ]
                     }
@@ -23,23 +32,45 @@
             }
         },
         {
-            "files": ["*.ts", "*.tsx"],
-            "extends": ["plugin:@nrwl/nx/typescript"],
+            "files": [
+                "*.ts",
+                "*.tsx"
+            ],
+            "extends": [
+                "plugin:@nrwl/nx/typescript"
+            ],
             "rules": {
-                "prettier/prettier": ["error"]
+                "prettier/prettier": [
+                    "error"
+                ]
             }
         },
         {
-            "files": ["*.js", "*.jsx"],
-            "extends": ["plugin:@nrwl/nx/javascript"],
+            "files": [
+                "*.js",
+                "*.jsx"
+            ],
+            "extends": [
+                "plugin:@nrwl/nx/javascript"
+            ],
             "rules": {}
         },
         {
-            "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+            "files": [
+                "*.spec.ts",
+                "*.spec.tsx",
+                "*.spec.js",
+                "*.spec.jsx"
+            ],
             "env": {
                 "jest": true
             },
             "rules": {}
         }
-    ]
+    ],
+    "plugins": [
+        "@nrwl/nx",
+        "prettier"
+    ],
+    "root": true
 }

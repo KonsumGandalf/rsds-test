@@ -1,0 +1,6 @@
+<div *ngIf="(scans$ | async) as photos">
+        <div class="rsds-hero-container" *ngFor="let photo of photos">
+            <rsds-hero-item [photo]="photo"></rsds-hero-item>
+        </div>
+</div>
+
