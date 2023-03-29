@@ -1,0 +1,19 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "backend",
+            "image": "lukondefmwila/dkr-multicontainer-app-backend",
+            "hostname": "backend",
+            "essential": false,
+            "memory": 300
+        },
+        {
+            "name": "database",
+            "image": "lukondefmwila/dkr-multicontainer-app-backend",
+            "hostname": "database",
+            "essential": true,
+            "memory": 100
+        }
+    ]
+}

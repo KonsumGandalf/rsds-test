@@ -13,8 +13,12 @@ services:
         networks:
             - backend_network
             - database_network
-        env_file:
-            - .docker/.postgres.env
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_PORT=5432
+            - POSTGRES_HOST=host.docker.internal
+            - POSTGRES_DB=rsds
 
     cloudBeaver:
         depends_on:
@@ -44,7 +48,13 @@ services:
         restart: unless-stopped
         env_file:
             - .docker/.backend.env
-            - .docker/.postgres.env
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
+            - POSTGRES_PORT=5432
+            - POSTGRES_HOST=postgres
+            - POSTGRES_DB=rsds
+
         volumes:
             - .:/usr/src/app
         command: npx nx run api:serve:development
@@ -61,8 +71,8 @@ services:
             - "4200:4200"
         volumes:
             - .:/usr/src/app
-        env_file:
-            - .docker/.frontend.env
+        environment:
+            - HOST=host.docker.internal
         networks:
             - frontend_network
 
